@@ -61,13 +61,14 @@ public class SecurityConfig {
     }
 
     @Bean
+    public org.springframework.web.cors.CorsConfigurationSource corsConfigurationSource() {
         org.springframework.web.cors.CorsConfiguration configuration = new org.springframework.web.cors.CorsConfiguration();
-        
+
         java.util.List<String> allowedOrigins = new java.util.ArrayList<>();
         allowedOrigins.add("http://localhost:5173");
         allowedOrigins.add("http://localhost:3000");
         allowedOrigins.add("http://localhost:5174");
-        
+
         String envFrontendUrl = System.getenv("FRONTEND_URL");
         if (envFrontendUrl != null && !envFrontendUrl.isEmpty()) {
             allowedOrigins.add(envFrontendUrl);
@@ -81,4 +82,5 @@ public class SecurityConfig {
         org.springframework.web.cors.UrlBasedCorsConfigurationSource source = new org.springframework.web.cors.UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
         return source;
-    }}
+    }
+}
