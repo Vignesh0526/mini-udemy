@@ -33,6 +33,7 @@ We recommend using **Railway** (railway.app) or **Render** (render.com) because 
         *   `DB_USERNAME`: Use the variable `${MYSQLUSER}`.
         *   `DB_PASSWORD`: Use the variable `${MYSQLPASSWORD}`.
         *   `PORT`: `8080`.
+        *   `FRONTEND_URL`: Your Vercel URL (e.g., https://mini-udemy.vercel.app). Add this AFTER deploying Frontend (Step 3).
 6.  Railway will build and deploy. Once done, it will give you a public URL (e.g., `https://mini-udemy-production.up.railway.app`).
 
 ## 3. Deploy Frontend
